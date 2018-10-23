@@ -1,0 +1,43 @@
+<% include ../partials/header.ejs %>
+
+<div class="container-lg" style="height: 100vh; margin-top: 0; padding: 2.5vh 0; background-image: url('/images/background2.jpg'); background-size: cover;">
+    <div class="card">
+        <div class="card-header">
+                <h4><%= walk.name %></h4>
+                <p><em> submitted by <%= walk.author.username %>, <%= moment(walk.createdAt).fromNow() %></em></p>
+        </div>
+        <div class="card-body row" style="background-color: #ddd;">
+            <div class="col-md-6">
+                <h5 class="card-title">Description of the Walk</h5>
+                <p><%= walk.description %></p>
+                
+                <h5 class="card-title">The Overall Journey</h5>
+                <p><%= walk.journey %></p>
+               
+                <h5 class="card-title">Pub or Restaurant</h5>
+                <p><%= walk.foodplace %></p>
+                
+                <h5 class="card-title">Thoughts on the food and establishment</h5>
+                <p><%= walk.opinion %></p>
+    
+                <a class="btn btn-sm mb-4" style="color: #f7f9fb;" href="https://<%= walk.url %>">
+                    <%= walk.url %>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <img src="<%= walk.image %>" class="rounded img-fluid">
+            </div>
+            <br>
+            <% if(currentUser && walk.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                <a class="btn" href="/walks/<%= walk._id %>/edit">Edit walk</a>  
+                        
+                <form id="deleteform" class="form-delete" action="/walks/<%= walk._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-outline">Delete walk</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

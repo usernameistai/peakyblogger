@@ -1,0 +1,39 @@
+<% include partials/header %>
+
+<main style="background-color: #dad2c5;">
+    <header>
+        <div class="container" style="margin: auto;">
+            <div class="jumbotron" id="jumbotron" style="box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);">
+                <div class="container">
+                    <h1 class="pageone" style="margin-top: 1rem; padding-bottom: 0; color: #41533b;">
+                        <div class="row">
+                            <div><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i></div>
+                            <div style="text-shadow: 2px 4px 3px rgba(0,0,0,0.3);"><p>&ensp; Please login sir</p></div>
+                        </div>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="margin-bottom: 30vh;">
+        <h2 style="text-align: center;">Login</h2>
+        <div style="width: 40%; margin: 25px auto;">
+                <form action="/login" method="POST">
+                    <div class="form-group"> <!-- Gives space around parts of the form -->
+                        <input class="form-control" type="text" name="username" placeholder="username" id="">
+                    </div>
+                    <div class="form-group"> <!-- Gives space around parts of the form -->
+                        <input class="form-control" type="password" name="password" placeholder="password" id="">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-block">Login</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+</main>
+
+
+<% include partials/footer %>

@@ -1,0 +1,62 @@
+body {
+    background-image: url('/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+main {
+    padding-bottom: 15rem;
+}
+
+#nav {
+    position: fixed;
+    z-index: 100;
+    opacity: 0.75;
+    width: 100%;
+}
+
+#addlandbutton {
+    background-color: #41533b;
+}
+
+#landing-img1 {
+    background-image: url('/images/landing.jpg');
+    text-align: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#landing-img2 {
+    height: 20vh;
+    padding-bottom: 0;
+    height: 5rem;
+    padding: 7rem 0 0 0;
+
+}
+
+#landing1 {
+    padding: 10vh 0 5vh 0;
+    z-index: 0;
+    position: relative;
+}
+
+#landing2 {
+    width: 50%;
+    padding-bottom: 0;
+    z-index: 0;
+    position: relative;
+    text-align: center;
+}
+
+#footer {
+    position: relative;
+    margin-top: 0rem;
+    padding-top: 0;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    background: #e8e8e8;
+}

@@ -1,0 +1,398 @@
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    padding: auto;
+    
+}
+
+body{
+    margin: 0 0;
+    line-height: 1.4;
+    padding-bottom: 0;
+}
+
+main {
+    margin-bottom: 0;
+    background-image: url('/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img{
+    max-width: 100%;
+}
+
+nav ul a {
+    color: #41533b;
+}
+
+#one {
+   background-color: #41533b;
+}
+
+#nav {
+    position: fixed;
+    z-index: 100;
+    opacity: 0.8;
+    width: 100%;
+    color: #41533b;
+}
+
+#footer {
+    position: relative;
+    margin-top: 0rem;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    background: #e8e8e8;
+}
+
+#deleteform {
+    display: inline-block;
+}
+
+.work {
+    font-family: 'Work Sans', cursive;
+}
+
+.pageone {
+    font-weight: 600;
+    font-size: 35px;
+    color: #3f3e3e;
+    padding: 1rem 0;
+}
+
+/* CSS variables, can use throughout css */
+:root{
+    --primary: #ddd;
+    --dark: #778899;
+    --light: #f7f9fb;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0);
+}
+
+
+.btn{
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+.highlight, li:hover, a:hover, .current a, #one:hover{
+	color: #3aafa9;
+}
+
+.woodlandgreen {
+    background-color: #41533b;  
+}
+
+.wrapper{
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Top container  */
+.top-container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+    padding-top: 10px;
+    font-family: 'Homemade Apple', cursive;
+    color: #41533b;
+}
+
+.top-container a {
+    background-color: #41533b;
+}
+
+/* showcase */
+.showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background: url('/images/beer_barrel.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3);
+}
+
+.showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+.showcase p{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+/* top box */
+
+.top-box{
+    background: #ddd;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    border-radius: 7px;
+    color: var(--light);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+
+.top-box .price{
+    font-size: 2.5rem;
+}
+
+.top-box-a{
+    grid-area: top-box-a;
+    background: url('/images/dad_photo1.jpg');
+    background-size: cover;
+}
+
+.top-box-b{
+    grid-area: top-box-b;
+    background: url('/images/inside_pub_peak1.jpg');
+    background-size: cover;
+}
+
+.fas fa{
+    color: #3aafa9;
+}
+/* boxes */
+.boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    color: #41533b;
+}
+
+.box{
+    background: #ddd;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+
+.box a {
+    background-color: #41533b;
+}
+
+/* info */
+.info{
+    background: #ddd;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    font-family: 'Homemade Apple', cursive;
+    color: #41533b;
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+
+.about {
+    box-sizing: border-box;
+}
+/* portfolio */
+.portfolio{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, 
+    minmax(200px, 1fr));
+}
+
+.portfolio img{
+    width: 100%;
+    box-shadow: var(--varshadow);
+}
+
+.card-body a {
+    background-color: #41533b;
+}
+
+.wrappery{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'a a b'
+    'a a c'
+    'd e f';
+    padding-top: 10px;
+    font-family: 'Homemade Apple', cursive;
+    color: #41533b;
+}
+.boxy {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: #41533b;
+    color: #fff;
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    font-size: 125%;
+    opacity: 0.88;
+    box-shadow: 0 3px 4px 2px rgba(68, 83 , 59, 0.3);
+}
+
+.aa {
+    grid-area: a;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+   
+}
+.bb {
+    grid-area: b;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}  
+.cc {
+    grid-area: c;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.dd {
+    grid-area: d;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.ee {
+    grid-area: e;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.ff {
+    grid-area: f;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+/* media */
+
+/* 
+  ##Device = Desktops */
+@media (min-width: 1281px) {
+ 
+  }
+  
+  /*  ##Device = Laptops, Desktops  */
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+  
+    
+  }
+  
+  /* ##Device = Tablets, Ipads (portrait)  */
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+ 
+  }
+  
+  /* ##Device = Tablets, Ipads (landscape)  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  }
+  
+  /* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    .top-container,
+    nav ul,
+    .showcase,
+    .top-box,
+    footer{
+        display: block;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer{
+		display: block;
+		padding: 10px;
+	}
+  }
+  
+  /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    footer{
+        display: block;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer{
+		display: block;
+		padding: 10px;
+	}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

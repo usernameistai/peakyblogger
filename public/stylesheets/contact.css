@@ -1,0 +1,65 @@
+body {
+  margin: 40px;
+}
+
+main {
+    background-image: url('/images/background2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, [col] 200px);
+    grid-template-rows: repeat(auto-fill, [row] 200px);
+    color: #444;
+}
+
+.box {
+    background-color: #41533b;
+    color: #fff;
+    border-radius: 5px;
+    padding-bottom: 2rem;
+    font-size: 150%;
+    opacity: 0.88;
+    box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3);
+}
+
+.a {
+    grid-column: col / span 2;
+    grid-row: row 1 / 3;
+
+}
+.b {
+    grid-column: col 3 / span 2 ;
+    grid-row: row 1 / 3;
+
+}
+.c {
+    grid-column: col / span ;
+    grid-row: row 3 ;
+}
+.d {
+    grid-column: col 2 / span 2 ;
+    grid-row: row 3 ;
+}
+.e {
+    grid-column: col 3 / span ;
+    grid-row: row 3;
+}
+.f {
+    grid-column: col / span 4;
+    grid-row: row 4;
+    margin-bottom: 3rem;
+}
+
+#footer {
+    position: relative;
+    margin-top: 0rem;
+    padding-top: 0rem;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    background: #e8e8e8;
+}
