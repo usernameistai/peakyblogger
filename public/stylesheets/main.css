@@ -72,6 +72,12 @@ nav ul a {
     --shadow: 0 1px 5px rgba(104, 104, 104, 0);
 }
 
+.shadow {
+    color: #41533b;
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+
 
 .btn{
     background: var(--dark);
