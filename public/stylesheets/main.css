@@ -10,14 +10,18 @@ body{
     margin: 0 0;
     line-height: 1.4;
     padding-bottom: 0;
-}
-
-main {
     margin-bottom: 0;
     background-image: url('/images/background2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/*main {
+    margin-bottom: 0;
+    background-image: url('/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
 
 img{
     max-width: 100%;
@@ -37,16 +41,6 @@ nav ul a {
     opacity: 0.8;
     width: 100%;
     color: #41533b;
-}
-
-#footer {
-    position: relative;
-    margin-top: 0rem;
-    left: 0;
-    bottom: 0;
-    height: 3rem;
-    width: 100%;
-    background: #e8e8e8;
 }
 
 #deleteform {
@@ -311,7 +305,15 @@ nav ul a {
     justify-content: center;
 }
 
-
+#footer {
+    position: fixed;
+    margin-top: 0rem;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    background: #e8e8e8;
+}
 
 
 
@@ -353,7 +355,7 @@ nav ul a {
     nav ul,
     .showcase,
     .top-box,
-    footer{
+    footer {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -368,16 +370,33 @@ nav ul a {
   /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
   
   @media (min-width: 320px) and (max-width: 480px) {
+    .top-container,
+    nav ul,
+    .showcase,
+    .top-box,
     footer{
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 50%;
+    }
+
     .footer{
 		display: block;
 		padding: 10px;
 	}
+  }
+
+  @media (min-width: 200px) and (max-width: 319px){
+
   }
 
 
