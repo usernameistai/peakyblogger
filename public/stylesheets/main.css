@@ -307,10 +307,10 @@ nav ul a {
 
 #footer {
     position: fixed;
-    margin-top: 0rem;
+    margin: 0rem;
     left: 0;
     bottom: 0;
-    height: 3rem;
+    height: 5rem;
     width: 100%;
     background: #e8e8e8;
 }
@@ -361,10 +361,7 @@ nav ul a {
         margin-bottom: 1rem;
     }
 
-    .footer{
-		display: block;
-		padding: 10px;
-	}
+    
   }
   
   /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
