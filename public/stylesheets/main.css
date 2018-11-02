@@ -306,8 +306,8 @@ nav ul a {
 }
 
 #footer {
-    position: fixed;
-    margin: 0rem;
+    position: relative;
+    margin-bottom: -5rem;
     left: 0;
     bottom: 0;
     height: 5rem;
