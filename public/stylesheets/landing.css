@@ -55,7 +55,7 @@ main {
 }
 
 #footer {
-    position: absolute;
+    position: relative;
     margin-top: 0;
     padding-top: 0;
     left: 0;
