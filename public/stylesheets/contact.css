@@ -69,3 +69,73 @@ main {
     width: 100%;
     background: #e8e8e8;
 }
+
+
+/* media */
+
+/* 
+  ##Device = Desktops */
+  @media (min-width: 1281px) {
+ 
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+
+  
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .container,
+    #landing1,
+    #landing2,
+    footer {
+        display: block;
+        padding: 1rem;
+
+    }
+
+    .wrapper, .box {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .container,
+    #landing1,
+    #landing2,
+    footer {
+        display: block;
+        padding: 1rem;
+
+    }
+
+    .wrapper, .box {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+  
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+
+}
