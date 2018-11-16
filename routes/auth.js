@@ -6,7 +6,7 @@ var express      = require("express"),
     nodemailer  = require("nodemailer"),
     User         = require("../models/user");
 
-/*var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.email',
     port: 465,
     secure: true, // true for 465, false for other ports
@@ -17,15 +17,16 @@ var express      = require("express"),
     tls: {
         rejectUnauthorised: false
     }
-}); */
+});
 
+/*
 var transporter = nodemailer.createTransport({
     service: `Gmail`, // nodemailer has the settings for google and other popular services
     auth: {
         user: process.env.GMAIL_USER, // you need your gmail address here
         pass: process.env.GMAIL_PASS
     }
-});
+}); */
 
 // root route
 router.get("/", function(req, res){
@@ -51,7 +52,6 @@ router.get("/contact/contactform", function(req, res){
 
 router.post("/send", function(req, res){
     console.log(req.body);
-
     // setup email data with unicode symbols
     var mailOptions = {
         to: process.env.GMAIL_USER, 
