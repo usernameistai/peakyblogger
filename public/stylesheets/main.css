@@ -211,7 +211,7 @@ nav ul a {
 }
 
 .box{
-    background: #ddd;
+    background: #f8f8ff;
     text-align: center;
     padding: 1.5rem 1.5rem;
     box-shadow: var(--shadow);
