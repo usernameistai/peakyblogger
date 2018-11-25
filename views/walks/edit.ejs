@@ -1,65 +1,64 @@
 <% include ../partials/header %>
 
-<main style="background-color: #dad2c5;">
-        <header>
-            <div class="container" style="margin: auto;">
-                <div class="jumbotron" id="jumbotron" style="box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);">
-                    <div class="container">
-                        <h1 class="pageone shadow" style="margin-top: 1rem; padding-bottom: 0;">
-                            <div class="row">
-                                <div><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i></div>
-                                <div><p style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">&emsp; Edit your blog</p></div>
-                            </div>
-                        </h1>
-                    </div>
+<!--<main style="background-color: #dad2c5;"> -->
+    <header>
+        <div class="container" style="margin: auto;">
+            <div class="jumbotron" id="jumbotron" style="box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);">
+                <div class="container">
+                    <h1 class="pageone shadow" style="margin-top: 1rem; padding-bottom: 0;">
+                        <div class="row">
+                            <div><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i></div>
+                            <div><p style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">&emsp; Edit your blog</p></div>
+                        </div>
+                    </h1>
                 </div>
             </div>
-        </header>
-    
-        <div class="container" style="padding-bottom: 5rem;">
-            <h2 style="text-align: center;"> Edit <%= walk.name %> </h2>
-            <div style="width: 40%; margin: 25px auto;">
-                <form action="/walks/<%= walk._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="name" value="<%= walk.name %>">
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                                <label class="custom-file-label" for="image">Choose photo</label>
-                                <input type="file" id="image" name="image" accept="image/*" class="custom-file-input"> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="description" value="<%= walk.description %>">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="journey" value="<%= walk.journey %>">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="foodplace" value="<%= walk.foodplace %>">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="opinion" value="<%= walk.opinion %>">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="url" value="<%= walk.url %>">
-                    </div>
-                    <!-- <div class="form-group">
-                        <div class="input-group mb-3">
-                            <div class="custom-file">                      -- added name="image" for upload too--
-                                <input type="file" name="image" class="custom-file-input form-control" id="file" >
-                                <br>
-                                <label class="custom-file-label" for="file">Choose photo</label> <--for="id"--
-                            </div> <--could add type="submit"--
-                        </div>
-                    </div> -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-block">Edit</button>
-                    </div> <!--added type="submit" -->
-                </form>
-                <a href="/walks">Go back</a>
-            </div>
         </div>
-    </main>
+    </header>
+
+    <div class="container" style="padding-bottom: 5rem;">
+        <h2 style="text-align: center;"> Edit <%= walk.name %> </h2>
+        <div style="width: 75%; margin: 25px auto;">
+            <form action="/walks/<%= walk._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" value="<%= walk.name %>">
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                            <label class="custom-file-label" for="image">Choose photo</label>
+                            <input type="file" id="image" name="image" accept="image/*" class="custom-file-input"> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="description" value="<%= walk.description %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="journey" value="<%= walk.journey %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="foodplace" value="<%= walk.foodplace %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="opinion" value="<%= walk.opinion %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="url" value="<%= walk.url %>">
+                </div>
+                <!-- <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">                      -- added name="image" for upload too--
+                            <input type="file" name="image" class="custom-file-input form-control" id="file" >
+                            <br>
+                            <label class="custom-file-label" for="file">Choose photo</label> <--for="id"--
+                        </div> <--could add type="submit"--
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-block">Edit</button>
+                </div> <!--added type="submit" -->
+            </form>
+            <a href="/walks">Go back</a>
+        </div>
+    </div>
 
 <% include ../partials/footer %>

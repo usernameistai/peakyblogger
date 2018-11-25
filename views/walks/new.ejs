@@ -19,7 +19,7 @@
     <div class="container" style="padding-bottom: 5rem;">
         <h2 style="text-align: center;"> Fill in the details below </h2>
         <% if(currentUser && currentUser.isAdmin){ %>
-            <div style="width: 40%; margin: 25px auto;">
+            <div style="width: 75%; margin: 25px auto;">
                 <form action="/walks" method="POST" enctype="multipart/form-data"> <!--changed-->
                     <div class="form-group"> <!-- Gives space around parts of the form -->
                         <input class="form-control" type="text" name="name" placeholder="name of the walk please">
