@@ -28,9 +28,9 @@ img{
     max-width: 100%;
 }
 
-p {
+/*p {
     text-align: center;
-}
+}*/
 
 a {
     max-width: 100%;
@@ -337,6 +337,7 @@ nav ul a {
 #footer {
     position: relative;
     margin-bottom: 0rem;
+    margin-top: 5rem; /* added later  */
     left: 0;
     bottom: 0;
     height: 4rem;
