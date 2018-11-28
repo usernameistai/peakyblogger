@@ -89,7 +89,7 @@ router.get("/register", function(req, res){
 // handle sign up logic
 router.post("/register", function(req, res){
     var newUser = new User({username: req.body.username}); // username and password from form
-    if(req.body.admincode === 'JohnDavidBattye127'){
+    if(req.body.admincode === process.env.ADMIN_CODE){
         newUser.isAdmin = true;
     }
     User.register(newUser, req.body.password, function(err, user){
