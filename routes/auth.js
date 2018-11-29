@@ -74,7 +74,7 @@ router.post("/send", function(req, res){
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-            return console.log(error);
+            console.log(error);
         }
         req.flash("success", "your email has been sent");
         res.redirect("/home");
