@@ -58,6 +58,13 @@ nav ul a {
     display: inline-block;
 }
 
+.walk_jumb {
+    background-image: url('/images/english_sillhouette.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
+}
+
 .hh1 {
     font-size: 3.5rem;
 }
