@@ -21,12 +21,12 @@
     <br>
     <div class="container">
         <div class="col text-center">
-            <% walks.forEach(function(walk){ %>
+            <% walks.reverse().forEach(function(walk){ %> <!-- added .reverse(). -->
                 <div class="card rounded" style="margin: 0.5rem 0; background-color: #e6ebe6;">
                     <div class="row gutters">
                         <div class="col-md-6">
                             <div class="card-block px-2">
-                                <h5 class="card-title w-100" style="padding-top: 0.5rem;"><%= walk.name %></h5>
+                                <h5 class="card-title w-100" style="padding-top: 0.5rem;"><strong><%= walk.name %></strong></h5>
                                 <p class="card-text w-100" style="padding-bottom: 1rem; text-align: left;"><%= walk.description.substring(0, 127) %>..</p>
                                 <p style="text-align: right; padding-bottom: 2rem;"><%= moment(walk.createdAt).fromNow() %></p>
                             </div>

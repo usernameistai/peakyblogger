@@ -28,7 +28,7 @@ cloudinary.config({
     
 // Index Show All Walks
 router.get("/", function(req, res){
-    var perPage = 4;
+    var perPage = 5;
     var pageQuery = parseInt(req.query.page);
     var pageNumber = pageQuery ? pageQuery : 1;
     var noMatch = null;
