@@ -219,7 +219,7 @@ nav ul a {
 .box{
     background: #f8f8ff;
     text-align: center;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
     box-shadow: var(--shadow);
     border-radius: 7px;
     box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
@@ -369,6 +369,14 @@ nav ul a {
   
   /* ##Device = Tablets, Ipads (portrait)  */
   @media (min-width: 768px) and (max-width: 1024px) {
+
+    .boxes{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));
+        color: #41533b;
+    }
+
     .hh1 {
         font-size: 3rem;
     }
@@ -394,7 +402,13 @@ nav ul a {
   
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
-   
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));
+        color: #41533b;
+    }
+
     
     .hh1 {
         font-size: 3rem;
@@ -427,6 +441,13 @@ nav ul a {
     .top-box {
         display: block;
         margin-bottom: 1rem;
+    }
+
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));
+        color: #41533b;
     }
 
     .box {
@@ -487,6 +508,13 @@ nav ul a {
     .top-box {
         display: block;
         margin-bottom: 1rem;
+    }
+
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));
+        color: #41533b;
     }
 
     .box {
