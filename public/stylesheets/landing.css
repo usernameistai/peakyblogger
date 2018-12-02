@@ -76,8 +76,8 @@ main {
 }
 
 #footer {
-    position: absolute;
-    margin-top: 0;
+    position: relative;
+    margin-top: 15rem;
     padding-top: 0;
     left: 0;
     bottom: 0;
@@ -85,8 +85,6 @@ main {
     width: 100%;
     background: #e8e8e8;
 }
-
-
 
 /* media */
 
@@ -154,8 +152,7 @@ main {
 @media (min-width: 481px) and (max-width: 767px) {
     .container,
     #landing1,
-    #landing2,
-    footer {
+    #landing2 {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -185,8 +182,7 @@ main {
 @media (min-width: 320px) and (max-width: 480px) {
     .container,
     #landing1,
-    #landing2,
-    footer {
+    #landing2 {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
