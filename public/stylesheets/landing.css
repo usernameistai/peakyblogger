@@ -2,11 +2,12 @@ body {
     background-image: url('/images/background2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 
 main {
-    padding-bottom: 15rem;
+    padding-bottom: 5rem;
 }
 
 .shadow {
@@ -14,6 +15,26 @@ main {
     text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
     box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
 }
+
+.hh1 {
+    font-size: 3.5rem;
+}
+.hh2 {
+    font-size: 3rem;
+}
+.hh3 {
+    font-size: 2.5rem;
+}
+.hh4 {
+    font-size: 2rem;
+}
+.hh5 {
+    font-size: 1.5rem;
+}
+.hh6 {
+    font-size: 1rem;
+}
+
 
 #nav {
     position: fixed;
@@ -55,12 +76,12 @@ main {
 }
 
 #footer {
-    position: relative;
+    position: absolute;
     margin-top: 0;
     padding-top: 0;
     left: 0;
     bottom: 0;
-    height: 3rem;
+    height: 4rem;
     width: 100%;
     background: #e8e8e8;
 }
@@ -84,14 +105,48 @@ main {
 
 /* ##Device = Tablets, Ipads (portrait)  */
 @media (min-width: 768px) and (max-width: 1024px) {
-
+    .hh1 {
+        font-size: 3rem;
+    }
+    .hh2 {
+        font-size: 2.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 2rem;
+    }
+    .hh5 {
+        font-size: 1.5rem;
+    }
+    .hh6 {
+        font-size: 1rem;
+    }
 
 }
 
 /* ##Device = Tablets, Ipads (landscape)  */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
+    .hh1 {
+        font-size: 3rem;
+    }
+    .hh2 {
+        font-size: 2.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 2rem;
+    }
+    .hh5 {
+        font-size: 1.5rem;
+    }
+    .hh6 {
+        font-size: 1rem;
+    }
 }
 
 /* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
@@ -104,6 +159,24 @@ main {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
+    }
+    .hh1 {
+        font-size: 2rem;
+    }
+    .hh2 {
+        font-size: 1.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 1.25rem;
+    }
+    .hh5 {
+        font-size: 1.125rem;
+    }
+    .hh6 {
+        font-size: 1rem;
     }
 }
 
@@ -118,7 +191,24 @@ main {
         padding: 1rem;
         margin-bottom: 1rem;
     }
-
+    .hh1 {
+        font-size: 2rem;
+    }
+    .hh2 {
+        font-size: 1.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 1.25rem;
+    }
+    .hh5 {
+        font-size: 1.125rem;
+    }
+    .hh6 {
+        font-size: 1rem;
+    }
   
 }
 
