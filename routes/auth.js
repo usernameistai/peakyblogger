@@ -1,9 +1,9 @@
-// require("dotenv").config();
-
 var express      = require("express"),
     router       = express.Router(),
     passport     = require("passport"),
     nodemailer  = require("nodemailer"),
+    multer      = require("multer"),
+    Walk        = require("../models/walk"),
     User         = require("../models/user");
 
 var transporter = nodemailer.createTransport({
@@ -18,6 +18,28 @@ var transporter = nodemailer.createTransport({
         rejectUnauthorised: false
     }
 });
+
+// --------------------------------------------------------------
+var storage = multer.diskStorage({ // storage variable
+    filename: function(req, file, callback) {
+        callback(null, Date.now() + file.originalname);
+    }
+});
+var imageFilter = function (req, file, cb) {
+// accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error("Only image files are allowed!"), false);
+    }
+    cb(null, true);
+};// to here (below) is the multer stuff
+var upload = multer({ storage: storage, fileFilter: imageFilter}); 
+
+var cloudinary = require("cloudinary");
+cloudinary.config({ 
+    cloud_name: 'future-source', 
+    api_key: process.env.CLOUDINARY_API_KEY, 
+    api_secret: process.env.CLOUDINARY_API_SECRET
+}); // ------------------------------------------------------------ .. to here
 
 /*
 var transporter = nodemailer.createTransport({
@@ -48,6 +70,14 @@ router.get("/contact", function(req, res){
 
 router.get("/contact/contactform", function(req, res){
     res.render("contactform");
+});
+
+router.get("/gallery", function(req, res){
+    res.render("gallery");
+});
+
+router.get("/gallery/galleryform", function(req, res){
+    res.render("galleryform");
 });
 
 router.post("/send", function(req, res){

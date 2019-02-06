@@ -6,10 +6,10 @@ var express     = require("express"),
 
 // --------------------------------------------------------------
 var storage = multer.diskStorage({ // storage variable
-        filename: function(req, file, callback) {
-            callback(null, Date.now() + file.originalname);
-        }
-    });
+    filename: function(req, file, callback) {
+        callback(null, Date.now() + file.originalname);
+    }
+});
 var imageFilter = function (req, file, cb) {
     // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
