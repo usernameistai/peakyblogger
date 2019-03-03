@@ -127,6 +127,10 @@ nav ul a {
     background-color: #41533b;  
 }
 
+.back {
+    background-image: url('/images/english_combine_harvester.jpeg');
+}
+
 .wrapper{
     display: grid;
     grid-gap: 10px;
