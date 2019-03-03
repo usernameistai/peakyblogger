@@ -6,7 +6,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #email {
-background-image: url('/images/background2.jpg');
+background-image: url('/images/english_sillhouette.jpeg');
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -21,8 +21,12 @@ box-shadow: 0 3px 4px 2px rgba(68, 83 , 59, 0.3);
     box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
 }
 
+.back {
+    background-image: url('/images/english_combine_harvester.jpeg');
+}
+
 #nav {
-    position: fixed;
+    position: relative;
     z-index: 100;
     opacity: 0.8;
     width: 100%;

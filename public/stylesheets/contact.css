@@ -1,9 +1,11 @@
 body {
   margin: 40px;
+  line-height: 1.4;
+  background-image: url('/images/english_sillhouette.jpeg');
 }
 
 main {
-    background-image: url('/images/background2.jpg');
+
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -19,6 +21,10 @@ main {
     grid-template-columns: repeat(auto-fill, [col] 12rem);
     grid-template-rows: repeat(auto-fill, [row] 12rem);
     color: #444;
+}
+
+.back {
+    background-image: url('/images/english_combine_harvester.jpeg');
 }
 
 .box {
@@ -84,7 +90,7 @@ main {
 @media (min-width: 1281px) {
     .wrapper {
     grid-template-columns: repeat(auto-fill, [col] 20rem);
-    grid-template-rows: repeat(auto-fill, [row] 12rem);
+    grid-template-rows: repeat(auto-fill, [row] 13rem);
     }
 }
 
