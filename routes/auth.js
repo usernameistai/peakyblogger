@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var express      = require("express"),
     router       = express.Router(),
     passport     = require("passport"),
@@ -6,11 +8,23 @@ var express      = require("express"),
     Walk        = require("../models/walk"),
     User         = require("../models/user");
 
+
+var auth = {
+    type: 'oauth2',
+    user: 'battye139@gmail.com',
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN
+};
+
+
 var transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.email',
+    service: 'gmail',
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
+        auth,
         user: process.env.GMAIL_USER, // generated ethereal user
         pass: process.env.GMAIL_PASS // generated ethereal password
     },
@@ -40,15 +54,6 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY, 
     api_secret: process.env.CLOUDINARY_API_SECRET
 }); // ------------------------------------------------------------ .. to here
-
-/*
-var transporter = nodemailer.createTransport({
-    service: `Gmail`, // nodemailer has the settings for google and other popular services
-    auth: {
-        user: process.env.GMAIL_USER, // you need your gmail address here
-        pass: process.env.GMAIL_PASS
-    }
-}); */
 
 // root route
 router.get("/", function(req, res){
@@ -83,6 +88,13 @@ router.get("/gallery/galleryform", function(req, res){
 router.post("/send", function(req, res){
     console.log(req.body);
     // setup email data with unicode symbols
+    response = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        message: req.body.message
+      }
+
     var mailOptions = {
         to: process.env.GMAIL_USER, 
         from: `req.body.email`,
@@ -102,12 +114,13 @@ router.post("/send", function(req, res){
     };
 
     // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info) {
-        if(error) {
-            console.log(error);
+    transporter.sendMail(mailOptions, function(err, info) {
+        if(err) {
+            console.log(err);
         }
         req.flash("success", "your email has been sent");
         res.redirect("/home");
+        console.log(JSON.stringify(info));
     });
 });
 
