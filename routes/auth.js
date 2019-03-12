@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 var express      = require("express"),
     router       = express.Router(),
     passport     = require("passport"),
@@ -8,15 +6,13 @@ var express      = require("express"),
     Walk        = require("../models/walk"),
     User         = require("../models/user");
 
-
 var auth = {
     type: 'oauth2',
-    user: 'battye139@gmail.com',
+    user: process.env.GMAIL_USER,
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN
 };
-
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -32,6 +28,8 @@ var transporter = nodemailer.createTransport({
         rejectUnauthorised: false
     }
 });
+
+
 
 // --------------------------------------------------------------
 var storage = multer.diskStorage({ // storage variable
