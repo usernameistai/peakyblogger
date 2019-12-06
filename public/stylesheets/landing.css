@@ -69,7 +69,7 @@ main {
 }
 
 #landing2 {
-    width: 50%;
+    width: auto;
     z-index: 0;
     position: relative;
     text-align: center;
@@ -153,11 +153,14 @@ main {
 
 @media (min-width: 481px) and (max-width: 767px) {
     .container,
-    #landing1,
+
     #landing2 {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
+    }
+    #landing1 {
+        padding: 8.5vh 0 3vh 0;
     }
     .hh1 {
         font-size: 2rem;
@@ -183,11 +186,14 @@ main {
 
 @media (min-width: 320px) and (max-width: 480px) {
     .container,
-    #landing1,
+
     #landing2 {
         display: block;
         padding: 1rem;
         margin-bottom: 1rem;
+    }
+    #landing1 {
+        padding: 8.5vh 0 3vh 0;
     }
     .hh1 {
         font-size: 2rem;
