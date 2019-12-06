@@ -144,7 +144,7 @@ nav ul a {
     'showcase showcase top-box-a'
     'showcase showcase top-box-b';
     padding-top: 10px;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Arial', cursive;
     color: #41533b;
 }
 
@@ -240,7 +240,7 @@ nav ul a {
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Arial', cursive;
     color: #41533b;
     box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
 }

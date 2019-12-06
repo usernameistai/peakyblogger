@@ -1,181 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Eating & Walking</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Eating & Walking</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info" id="nav">
-        <a class="navbar-brand" href="/"><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i> Peaky Blogger |</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://www.peakdistrict.gov.uk/">Peak District National Park</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li>
-                    <form action="/walks" method="GET" class="form-inline my-2 my-sm-0">
-                        <div class="form-group">
-                            <input type="text" name="search" class="form-control mr-sm-2" style="width: 15rem;" placeholder="Search" aria-label="Search">
-                            <input type="submit" class="btn" value="Search">
-                        </div>
-                    </form>
-                </li>
-                <li class="nav-item dropdown">
-                    <% if(currentUser) { %>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= currentUser.username %>'s stuff
-                    </a>
-                    <% } else { %>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        JDB's stuff
-                    </a>
-                    <% } %>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <% if(!currentUser) { %>
-                            <a class="dropdown-item" href="/login">Login</a>
-                            <a class="dropdown-item" href="/register">Sign Up</a>
-                        <% } else { %>
-                            <p>&emsp; Signed in as <%= currentUser.username %></p>
-                            <a class="dropdown-item" href="/logout">Logout</a>
-                        <% } %>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="https://www.rohan.co.uk/">Rohan Outdoor Wear</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/walks">Walks & Blogs</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg navbar-light bg-info" id="nav">
+		<a class="navbar-brand" href="/"><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i> Peaky Blogger |</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+		</button>
+			
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://www.peakdistrict.gov.uk/">Peak District National Park</a>
+				</li>
+			</ul>
+				<ul class="navbar-nav ml-auto">
+					<li>
+						<form action="/walks" method="GET" class="form-inline my-2 my-sm-0">
+							<div class="form-group">
+								<input type="text" name="search" class="form-control mr-sm-2" style="width: 15rem;" placeholder="Search" aria-label="Search">
+								<input type="submit" class="btn" value="Search">
+							</div>
+						</form>
+					</li>
+					<li class="nav-item dropdown">
+						<% if(currentUser) { %>
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<%= currentUser.username %>'s stuff
+							</a>
+						<% } else { %>
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									JDB's stuff
+							</a>
+						<% } %>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<% if(!currentUser) { %>
+								<a class="dropdown-item" href="/login">Login</a>
+								<a class="dropdown-item" href="/register">Sign Up</a>
+							<% } else { %>
+								<p>&emsp; Signed in as <%= currentUser.username %></p>
+								<a class="dropdown-item" href="/logout">Logout</a>
+							<% } %>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="https://www.rohan.co.uk/">Rohan Outdoor Wear</a>
+						</div>
+					</li>
+					<li class="nav-item">
+							<a class="nav-link" href="/walks">Walks & Blogs</a>
+					</li>
+				</ul>
+		</div>
+	</nav>
 
-    <main>
-
-        <div class="container">    
-            <% if(error && error.length > 0){ %>
-                <div class="alert alert-danger" role="alert">
-                    <%= error %>>
-                </div>
-            <% } %>
-            <% if(success && success.length > 0){ %>
-                <div class="alert alert-success" role="alert">
-                    <%= success %>>
-                </div>
-            <% } %>
-        </div>
-
-        <div class="container-lg">
-       
-
+	<main>
+		<div class="container">    
+			<% if(error && error.length > 0){ %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>>
+				</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>>
+				</div>
+			<% } %>
+		</div>
+		<div class="container-lg">
 
     <header>
-        <div class="container mt-3 m-auto" ><!-- style="margin: auto;" -->
-            <div class="jumbotron walk_jumb shadow">
-                <div class="container">
-                        <h2 class="pageone mt-1 pb-0" style="color: #41533b;">
-                            <i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i>
-                            <div style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">
-                                Peaky Blogger's guide to Food and Adventure
-                            </div>
-                        </h2>
-                        <p style="color: #41533b; text-align: center;">Look no further than the home hub, for all your walking and eating needs</p>
-                        <br>
-                </div>
-            </div>
-        </div>
+			<div class="container m-auto p-auto" ><!-- style="margin: auto;" -->
+				<div class="jumbotron walk_jumb shadow mt-3">
+					<div class="container">
+						<h2 class="pageone mt-1 pb-0" style="color: #41533b;">
+							<i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i>
+							<div style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">
+								Peaky Blogger's guide to Food and Adventure
+							</div>
+						</h2>
+						<p style="color: #41533b; text-align: center;">Look no further than the home hub, for all your walking and eating needs</p>
+						<br>
+					</div>
+				</div>
+			</div>
     </header>
     <div class="container">
-        <section class="top-container">
-            <header class="showcase">
-                <h1>Pubs and restaurants in the Peak District<h1>
-                <p>My Blogs and Experiences</p>
-                <a href="/walks" class="btn work">Look for them here</a>
-            </header>
-            <div class="top-box top-box-a">
-                <p class="hh4">Favourite areas of the Peak District</p>
-                <p class="price">Places and Walks</p>
-                <a href="#" class="btn work">More info</a>
-            </div>
-            <div class="top-box top-box-b">
-                <p class="hh3">Gallery</p>
-                <p class="price"></p>
-                <a href="/gallery" class="btn work">Look for them here</a>
-            </div>
-        </section><br>
-
+			<section class="top-container">
+				<header class="showcase">
+					<h1>Pubs and Restaurants in the Peak District<h1>
+					<p>My Blogs and Experiences</p>
+					<a href="/walks" class="btn work">Look for them here</a>
+				</header>
+				<div class="top-box top-box-a">
+					<p class="hh4">Favourite areas of the Peak District</p>
+					<p class="price">Places / Walks</p>
+					<a href="#" class="btn work">More info</a>
+				</div>
+				<div class="top-box top-box-b">
+					<p class="hh3">Gallery</p>
+					<p class="price"></p>
+					<a href="/gallery" class="btn work">Look for them here</a>
+				</div>
+			</section><br>
             <!-- boxes section-->
-        <section class="boxes">
-            <div class="box">
-                <i class="fas fa-tint fa-3x"></i><i class="far fa-sun fa-3x"></i>
-                <p class="hh4">Rain / Sun</p>
-                <p class="hh6">Eat and walk where you would like to</p>
-                <a href="/about" class="btn">About</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-atlas fa-3x"></i>
-                <p class="hh5">Interesting Events Locally / Peak District</p>
-                <p class="hh6">Most of the places I'll be going to eat are in the Peak District</p>
-            </div>
-            <div class="box">
-                <i class="fab fa-youtube fa-3x"></i>
-                <p class="hh4">vlog / YouTube</p>
-                <p class="hh6">Some of my vlogs from my walks</p>
-                <a href="https://www.youtube.com/user/DavidBattye" class="btn">vlog</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-envelope fa-3x"></i>
-                <p class="hh4">Contact Me</p>
-                <p class="hh6">Click here to send me a message</p>
-                <a href="/contact" class="btn"></a>
-            </div>
-        </section><br>
+			<section class="boxes">
+				<div class="box">
+					<i class="fas fa-tint fa-3x"></i><i class="far fa-sun fa-3x"></i>
+					<p class="hh4">Rain / Sun</p>
+					<p class="hh6">Eat and walk where you would like to</p>
+					<a href="/about" class="btn">About</a>
+				</div>
+				<div class="box">
+					<i class="fas fa-atlas fa-3x"></i>
+					<p class="hh5">Interesting Events Locally / Peak District</p>
+					<p class="hh6">Most of the places I'll be going to eat are in the Peak District</p>
+				</div>
+				<div class="box">
+					<i class="fab fa-youtube fa-3x"></i>
+					<p class="hh4">vlog / YouTube</p>
+					<p class="hh6">Some of my vlogs from my walks</p>
+					<a href="https://www.youtube.com/user/DavidBattye" class="btn">vlog</a>
+				</div>
+				<div class="box">
+					<i class="fas fa-envelope fa-3x"></i>
+					<p class="hh4">Contact Me</p>
+					<p class="hh6">Click here to send me a message</p>
+					<a href="/contact" class="btn"></a>
+				</div>
+			</section><br>
 
-        <section class="info">
-            <img src="images/studland_building_pb_villa.jpg">
-            <p class="hh2">My current favourite places to eat</p><br>
-            <p>Some of my best experiences</p>
-            <a href="#" class="btn work">More Info</a>
-        </section><br>
+			<section class="info">
+				<img src="images/studland_building_pb_villa.jpg">
+				<p class="hh2">My current favourite places to eat</p><br>
+				<p>Some of my best experiences</p>
+				<a href="#" class="btn work">More Info</a>
+			</section><br>
 
-        <article>
+			<article>
 
-        </article>
-        
-        <aside>
-            <div class="container-lg row">
-                <div class="card col-md-6">
-                    <img class="card-img-top pt-2" src="images/pdnpa-map.jpg" >
-                    <div class="card-body" style="padding-bottom: 1rem;">
-                        <h6 class="card-title">Peak District Map sourced from</h6>
-                        <a href="http://www.peakdistrict.gov.uk/visiting/maps/pdmap" class="btn woodlandgreen">P-D National Park</a>
-                    </div>
-                </div>
-                <div class="card col-md-6">
-                    <img class="card-img-top pt-2" src="images/english_combine_harvester.jpeg" >
-                    <div class="card-body" style="padding-bottom: 1rem;">
-                        <h6 class="card-title">Or just want a lazy pub day?</h6>
-                        <a href=# class="btn woodlandgreen">Lazy Days</a>
-                    </div>
-                </div>
-            </div>
-        </aside>
+			</article>
+			
+			<aside>
+				<div class="container-lg row">
+					<div class="card col-md-6">
+						<img class="card-img-top pt-2" src="images/pdnpa-map.jpg" >
+						<div class="card-body" style="padding-bottom: 1rem;">
+							<h6 class="card-title">Peak District Map (sourced below) </h6>
+							<a href="http://www.peakdistrict.gov.uk/visiting/maps/pdmap" class="btn woodlandgreen">P-D National Park</a>
+						</div>
+					</div>
+					<div class="card col-md-6">
+						<img class="card-img-top pt-2" src="images/english_combine_harvester.jpeg" >
+						<div class="card-body" style="padding-bottom: 1rem;">
+							<h6 class="card-title">Or just want a lazy pub day? (Less walking ahem...)</h6>
+							<a href=# class="btn woodlandgreen">Lazy Days</a>
+						</div>
+					</div>
+				</div>
+			</aside>
     </div>
 
 <% include ../partials/footer.ejs %>  
