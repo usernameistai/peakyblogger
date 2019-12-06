@@ -50,6 +50,6 @@ app.use("/", authRoutes);
 app.use("/walks", walkRoutes);
 // app.use("/walks/:id/reviews", reviewRoutes); // added after
 
-app.listen(process.env.PORT || 3000, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, () => {
     console.log("Dad's Blog is about to begin");
 });

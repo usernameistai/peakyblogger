@@ -73,9 +73,11 @@ main {
     z-index: 0;
     position: relative;
     text-align: center;
+    justify-content: center;
 }
 
 #footer {
+    display: block;
     position: relative;
     margin-top: 15rem;
     padding-top: 0;

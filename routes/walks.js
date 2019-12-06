@@ -2,7 +2,8 @@ var express     = require("express"),
     router      = express.Router(),
     Walk        = require("../models/walk"),
     middlw      = require("../middleware"), // index special name
-    multer      = require("multer"); // added from here to..
+    multer      = require("multer"), // added from here to..
+    path        = require("path");
 
 // --------------------------------------------------------------
 var storage = multer.diskStorage({ // storage variable
