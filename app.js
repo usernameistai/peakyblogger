@@ -16,7 +16,7 @@ var walkRoutes      = require("./routes/walks"),
     authRoutes      = require("./routes/auth");
 
 
-mongoose.connect("mongodb://dad:dbs127@ds119663.mlab.com:19663/dads-blogsite", {useNewUrlParser: true});
+mongoose.connect("mongodb://dad:dbs127@ds119663.mlab.com:19663/dads-blogsite", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");

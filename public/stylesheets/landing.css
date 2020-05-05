@@ -39,8 +39,9 @@ main {
 #nav {
     position: fixed;
     z-index: 100;
-    opacity: 0.75;
+    opacity: 0.95;
     width: 100%;
+    font-weight: bold;
 }
 
 #addlandbutton {

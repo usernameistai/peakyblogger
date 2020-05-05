@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+    <header>
+        <div class="container" style="margin: auto;">
+            <div class="jumbotron walk_jumb" style="box-shadow:0 2px 4px 0px rgba(68, 83 , 59, 0.3);">
+                <div class="container">
+                    <h2 class="pageone" style="margin-top: 1rem; padding-bottom: 0; color: #41533b;">
+                        <i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i>
+                        <div style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">
+                            Gallery
+                        </div>
+                    </h2>
+                    <p style="color: #41533b; text-align: center;">The pictures of Peaky Blogger (not here yet)</p>
+                    <br>
+                    <% if(currentUser && currentUser.isAdmin){ %>
+                        <p style="text-align: center; margin: 0;">
+                            <a class="btn btn-lg" href="/gallery/galleryform">Add images to gallery</a>
+                        </p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+<% include partials/footer %>

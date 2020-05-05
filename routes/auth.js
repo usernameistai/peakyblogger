@@ -91,7 +91,7 @@ router.post("/send", function(req, res){
         email: req.body.email,
         phone: req.body.phone,
         message: req.body.message
-      }
+      };
 
     var mailOptions = {
         to: process.env.GMAIL_USER, 

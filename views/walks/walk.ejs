@@ -85,16 +85,20 @@
 			<div class="container m-auto p-auto" > <!-- style="margin: auto; padding: auto;" -->
 				<div class="jumbotron walk_jumb shadow mt-3">
 					<div class="container">
-						<h1 class="pageone" style="padding-bottom: 0; margin: auto; color: #41533b;">
+						<h1 class="pageone pb-0 wj">
 							<div class="row">
-								<div><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i></div>
-								<div style="text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);">Where to Eat in the Peak District</div>
+								<div>
+									<i class="fas fa-tree fa-2x"></i>
+									<i class="fas fa-utensils fa-2x"></i>
+								</div>
+								<p> </p>
+								<div class="tsw"><span> Where to Eat in the Peak District </span></div>
 							</div>
 						</h1>
-						<h6 style="text-align: center; color: #41533b; padding-bottom: 1.75rem;">..giving you some idea of where the best places to eat are in the Peak District. I’ll also give you an idea where some of the best walks are.. </h6>
+						<h6 class="h6w">..giving you some idea of where the best places to eat are in the Peak District. I’ll also give you an idea where some of the best walks are.. </h6>
 						<% if(currentUser && currentUser.isAdmin){ %>
-								<p style="text-align: center; margin: 2rem 0 0 0;">
-										<a class="btn btn-lg" href="/walks/new">Add a Walk and Blog</a>
+							<p class="wp1">
+								<a class="btn btn-lg" href="/walks/new">Add a Walk and Blog</a>
 							</p>
 						<% } %>
 					</div>
@@ -105,20 +109,22 @@
 		<div class="container">
 			<div class="col">
 				<% walks.reverse().forEach(function(walk){ %> <!-- added .reverse(). -->
-					<div class="card" style="margin: 0.5rem 0; background-color: #e6ebe6;">
+					<div class="card c1">
 						<div class="row gutters">
 							<div class="col-md-6">
-								<div class="card-block px-2">
-									<h5 class="card-title w-100 text-center" style="padding-top: 0.5rem;"><strong><%= walk.name %></strong></h5>
-									<p class="card-text w-100" style="padding-bottom: 1rem; text-align: left;"><%= walk.description.substring(0, 108) %>..</p>
-									<p style="text-align: right; padding-bottom: 2rem;"><%= moment(walk.createdAt).fromNow() %></p>
-								</div>
-								<div class="card-footer text-muted text-center w-100">
-									<a href="/walks/<%= walk._id %>" class="btn woodlandgreen">More Info</a>
+								<div>
+									<div class="card-block px-2">
+										<h5 class="card-title w-100 text-center pt-0.5" ><strong><%= walk.name %></strong></h5>
+										<p class="card-text w-100 wp2"><%= walk.description.substring(0, 108) %>..</p>
+										<p class="pb-2" style="text-align: right;"><%= moment(walk.createdAt).fromNow() %></p>
+									</div>
+									<div class="card-footer text-muted text-center w-100 mt-3">
+										<a href="/walks/<%= walk._id %>" class="btn woodlandgreen">More Info</a>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<img src="<%= walk.image %>" class="img-fluid rounded mr-auto" style="position: relative; height: auto; margin: 0 auto; padding: 1rem 1rem 0 0;" alt="Responsive image">
+							<div class="col-md-6 img1">
+								<img src="<%= walk.image %>" class="img-fluid rounded mr-auto" alt="Responsive image">
 							</div>
 						</div>
 					</div>

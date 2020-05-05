@@ -49,9 +49,14 @@ nav ul a {
 #nav {
     position: relative;
     z-index: 100;
-    opacity: 0.8;
+    opacity: 0.88;
     width: 100%; /* removed height */
     color: #41533b;
+    font-weight: bold;
+}
+
+#bold {
+    font-weight: bold;
 }
 
 #deleteform {
@@ -94,6 +99,46 @@ nav ul a {
     font-size: 35px;
     color: #3f3e3e;
     padding: 1rem 0;
+}
+
+.wj {
+    margin: auto;
+    color: #41533b;
+}
+
+.tsw {
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+}
+
+.h6w {
+    text-align: center;
+    color: #41533b;
+    padding-bottom: 1.75rem;
+}
+
+.wp1 {
+    text-align: center;
+    margin: 2rem 0 0 0;
+}
+
+.c1 {
+    margin: 0.5rem 0;
+    background-color: #e6ebe6;
+}
+
+.wp2 {
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.img1 {
+    /* position: relative; */
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin: -0.5rem 0 -1.25rem 0;
+    padding: 1rem 1rem 0 0;
 }
 
 /* CSS variables, can use throughout css */
@@ -146,6 +191,8 @@ nav ul a {
     padding-top: 10px;
     font-family: 'Arial', cursive;
     color: #41533b;
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
 }
 
 .top-container a {
