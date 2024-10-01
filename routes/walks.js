@@ -1,26 +1,26 @@
-var express     = require("express"),
-    router      = express.Router(),
-    Walk        = require("../models/walk"),
-    middlw      = require("../middleware"), // index special name
-    multer      = require("multer"), // added from here to..
-    path        = require("path");
+const express     = require("express");
+const router      = express.Router();
+const Walk        = require("../models/walk");
+const middlw      = require("../middleware"); // index special name
+const multer      = require("multer"); // added from here to..
+const path        = require("path");
 
 // --------------------------------------------------------------
-var storage = multer.diskStorage({ // storage variable
+const storage = multer.diskStorage({ // storage constiable
     filename: function(req, file, callback) {
         callback(null, Date.now() + file.originalname);
     }
 });
-var imageFilter = function (req, file, cb) {
+const imageFilter = function (req, file, cb) {
     // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
         return cb(new Error("Only image files are allowed!"), false);
     }
     cb(null, true);
 };          // to here (below) is the multer stuff
-var upload = multer({ storage: storage, fileFilter: imageFilter}); 
+const upload = multer({ storage: storage, fileFilter: imageFilter}); 
 
-var cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary");
 cloudinary.config({ 
     cloud_name: 'future-source', 
     api_key: process.env.CLOUDINARY_API_KEY, 
@@ -29,10 +29,10 @@ cloudinary.config({
     
 // Index Show All Walks
 router.get("/", function(req, res){
-    var perPage = 5;
-    var pageQuery = parseInt(req.query.page);
-    var pageNumber = pageQuery ? pageQuery : 1;
-    var noMatch = null;
+    const perPage = 5;
+    const pageQuery = parseInt(req.query.page);
+    const pageNumber = pageQuery ? pageQuery : 1;
+    const noMatch = null;
     if(req.query.search){ // search stuff below
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         Walk.find({name: regex}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function(err, allWalks){
@@ -88,18 +88,18 @@ router.post("/", middlw.isLoggedIn, upload.single('image'), function(req, res){
         //add image's public_id to the walk object
         req.body.imageId = result.public_id;
         // add author to walk
-        var name = req.body.name;
-        var desc = req.body.description;
-        var jour = req.body.journey;
-        var food = req.body.foodplace;
-        var opin = req.body.opinion;
-        var url = req.body.url;
-        var author = {
+        const name = req.body.name;
+        const desc = req.body.description;
+        const jour = req.body.journey;
+        const food = req.body.foodplace;
+        const opin = req.body.opinion;
+        const url = req.body.url;
+        const author = {
             id: req.user._id,
             username: req.user.username
         };
         console.log(req.body.name + "==========");
-        var newWalk = {name: name, image: req.body.image, imageId: req.body.imageId, description: desc, journey: jour, 
+        const newWalk = {name: name, image: req.body.image, imageId: req.body.imageId, description: desc, journey: jour, 
             foodplace: food, opinion: opin, url: url, author: author};
         Walk.create(newWalk, function(err, walk){
             if(err){
@@ -149,7 +149,7 @@ router.put("/:id", middlw.checkWalkOwn, upload.single('image'), function(req, re
             if(req.file){
                 try {
                     await cloudinary.v2.uploader.destroy(walk.imageId);
-                    var result = await cloudinary.v2.uploader.upload(req.file.path);
+                    const result = await cloudinary.v2.uploader.upload(req.file.path);
                     walk.imageId = result.public_id; //walk.imageId
                     walk.image = result.secure_url; //walk.image
                 } catch(err){

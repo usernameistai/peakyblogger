@@ -1,22 +1,31 @@
 require("dotenv").config();
 
-var express         = require("express"),
-    app             = express(),
-    bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose"),
-    passport        = require("passport"),
-    cookieParser    = require("cookie-parser"),
-    LocalStrategy   = require("passport-local"),
-    flash           = require("connect-flash"),
-    Walk            = require("./models/walk"),
-    User            = require("./models/user"),
-    methodOverride  = require("method-override");
+const express         = require("express");
+const app             = express();
+const bodyParser      = require("body-parser");
+const mongoose        = require("mongoose");
+const passport        = require("passport");
+const cookieParser    = require("cookie-parser");
+const LocalStrategy   = require("passport-local");
+const flash           = require("connect-flash");
+const Walk            = require("./models/walk");
+const User            = require("./models/user");
+const methodOverride  = require("method-override");
 
-var walkRoutes      = require("./routes/walks"),
-    authRoutes      = require("./routes/auth");
+const walkRoutes      = require("./routes/walks");
+const authRoutes      = require("./routes/auth");
+constauthRoutes      = require("./routes/auth");
 
+const dburl = process.env.MONGO_URL || 'mongodb://localhost:27017/pb';
 
-mongoose.connect("mongodb://dad:dbs127@ds119663.mlab.com:19663/dads-blogsite", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/pb', {useNewUrlParser: true, useUnifiedTopology: true});
+    // .then(() => console.log('Mongo connect for dbs is connected'))
+    // .catch((err) => { console.log('Oh blimey master, Mongo Connection Error'); console.log(err) })
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => { console.log("Dad's Database is connected") });
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");

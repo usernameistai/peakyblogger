@@ -1,12 +1,12 @@
-var express      = require("express"),
-    router       = express.Router(),
-    passport     = require("passport"),
-    nodemailer  = require("nodemailer"),
-    multer      = require("multer"),
-    Walk        = require("../models/walk"),
-    User         = require("../models/user");
+const express      = require("express");
+const router       = express.Router();
+const passport     = require("passport");
+const nodemailer  = require("nodemailer");
+const multer      = require("multer");
+const Walk        = require("../models/walk");
+const User         = require("../models/user");
 
-var auth = {
+const auth = {
     type: 'oauth2',
     user: process.env.GMAIL_USER,
     clientId: process.env.CLIENT_ID,
@@ -14,7 +14,7 @@ var auth = {
     refreshToken: process.env.REFRESH_TOKEN
 };
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
     port: 465,
@@ -32,21 +32,21 @@ var transporter = nodemailer.createTransport({
 
 
 // --------------------------------------------------------------
-var storage = multer.diskStorage({ // storage variable
+const storage = multer.diskStorage({ // storage constiable
     filename: function(req, file, callback) {
         callback(null, Date.now() + file.originalname);
     }
 });
-var imageFilter = function (req, file, cb) {
+const imageFilter = function (req, file, cb) {
 // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
         return cb(new Error("Only image files are allowed!"), false);
     }
     cb(null, true);
 };// to here (below) is the multer stuff
-var upload = multer({ storage: storage, fileFilter: imageFilter}); 
+const upload = multer({ storage: storage, fileFilter: imageFilter}); 
 
-var cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary");
 cloudinary.config({ 
     cloud_name: 'future-source', 
     api_key: process.env.CLOUDINARY_API_KEY, 
@@ -93,7 +93,7 @@ router.post("/send", function(req, res){
         message: req.body.message
       };
 
-    var mailOptions = {
+    const mailOptions = {
         to: process.env.GMAIL_USER, 
         from: `req.body.email`,
         subject: 'New message from PeakyBlogger', // Subject line
@@ -129,7 +129,7 @@ router.get("/register", function(req, res){
 
 // handle sign up logic
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username}); // username and password from form
+    const newUser = new User({username: req.body.username}); // username and password from form
     if(req.body.admincode === process.env.ADMIN_CODE){
         newUser.isAdmin = true;
     }

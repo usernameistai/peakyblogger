@@ -1,7 +1,7 @@
 // middleware
-var Walk        = require("../models/walk"),
-    User        = require("../models/user"),
-    middlwObj   = {};
+const Walk = require("../models/walk");
+const User = require("../models/user");
+const middlwObj = {};
 
 middlwObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
